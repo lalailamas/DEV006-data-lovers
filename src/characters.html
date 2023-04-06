@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
     <title>Characters</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="characters.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Viaoda+Libre&display=swap" rel="stylesheet" family="Viaoda">
@@ -13,20 +13,51 @@
 </head>
 
 <body id="background2">
-    <header>
-        <div id="pageName" class="flex-container">
-            <img id="parchmentletters" src="../images/pergaminoletras.png" alt="Fondo pergamino de letras" width="500px"
-                height="200px">
+    <!--<header>
+        <div class="pageName">
             <h1 id="textcharacters"> Characters </h1>
         </div>
     </header>
     <section>
-        <div>
+        <div class="data">
             <input type="search" placeholder="Search"></input>
+            <div class="dropdown">
+                <button>Filter</button>
+                <div class="dropdown-content">
+                    <input type="checkbox">Only males</input>
+                    <input type="checkbox">Only females</input>
+                </div>
+
+            </div>
         </div>
     </section>
 
-    <div id="root"></div>
+-->
+
+    <div class="title-page">
+        Characters
+    </div>
+
+    <div class="data">
+        <input type="search" placeholder="Search"></input>
+        <select>
+            <option value="" disabled selected>Filter</option>
+            <option value="Only males"> Only males</option>
+            <option value="Only females"> Only females</option>
+        </select>
+
+        <select>
+            <option value="" disabled selected>Sort</option>
+            <option value="A-z"> A-Z</option>
+            <option value="Z-A"> Z-A</option>
+        </select>
+
+    </div>
+
+    <div class="characters">
+        info characters
+    </div>
+
     <script src="main.js" type="module"></script>
 </body>
 

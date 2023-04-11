@@ -8,7 +8,6 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-
 }
 
 .title-page {
@@ -23,6 +22,7 @@ body {
     justify-content: center;
     align-items: center;
     font-family: "harryP", sans-serif;
+    font-size: 2em;
 
 }
 
@@ -64,59 +64,23 @@ body {
     font-family: 'Viaoda Libre', cursive;
     font-size: 1em;
 
+
 }
 
-
-
-
-
-/*
-.pageName {
-    background-image: url(../images/pergaminoletras.png);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 500px;
-    height: 200px;
+#counter {
     display: flex;
-    align-items: center;
-    background-color: red;
-
-
-#textcharacters {
-    background-color: green;
-}
-.dropdown {
-    display: inline-block;
-    position: relative;
-    font-size: 16px;
+    justify-content: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    font-family: 'Viaoda Libre', cursive;
 }
 
-.dropdown-content {
-    display: none;
-    position: absolute;
-    width: 100%;
-    overflow: auto;
-    box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.4)
-}
-
-button {
-    font-size: 20px;
-    border-radius: 50px;
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-.dropdown-content a {
-    display: block;
-    color: #000000;
+#facts {
+    border-radius: 50px 50px 50px 50px;
+    background: #E3A900;
+    color: white;
+    display: flex;
+    align-self: flex-start;
     padding: 5px;
-    text-decoration: none;
 
 }
-
-.dropdown-content a:hover {
-    color: #FFFFFF;
-    background-color: #E3A900;*/

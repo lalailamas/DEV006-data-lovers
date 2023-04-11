@@ -13,37 +13,17 @@
 </head>
 
 <body id="background2">
-    <!--<header>
-        <div class="pageName">
-            <h1 id="textcharacters"> Characters </h1>
-        </div>
-    </header>
-    <section>
-        <div class="data">
-            <input type="search" placeholder="Search"></input>
-            <div class="dropdown">
-                <button>Filter</button>
-                <div class="dropdown-content">
-                    <input type="checkbox">Only males</input>
-                    <input type="checkbox">Only females</input>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
--->
-
     <div class="title-page">
         Characters
     </div>
+    
 
     <div class="data">
         <input type="search" placeholder="Search"></input>
-        <select id="filterGender">
+        <select id="selectGender">
             <option value="" disabled selected>Filter</option>
-            <option value="Only males" id="optionMale"> Only males</option>
-            <option value="Only females"id="optionFemale"> Only females</option>
+            <option value="Male" id="Only Males" > Only males</option>
+            <option value="Female" id="Only Females"> Only females</option>
         </select>
 
         <select>
@@ -53,6 +33,8 @@
         </select>
 
     </div>
+    <div id="facts" type="button">Interesting Facts</div>
+    <div id="counter"></div>
 
     <div class="charactersPage" id="charactersPage">
 

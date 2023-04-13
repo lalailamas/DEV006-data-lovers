@@ -3,13 +3,14 @@ import data from './data/harrypotter/data.js';
 
 const characterInfo = document.getElementById('charactersPage');
 
+// MOSTRAR LA DATA
 data.characters.forEach((item) => {
   const div = document.createElement('div');
   div.innerHTML = `Name: ${item.name} <br> Birthday: ${item.birth} <br>  Gender: ${item.gender}`;
   characterInfo.appendChild(div);
 });
 
-
+// FUNCION FILTRADO
 function maleFilter(character) {
   if (character.gender === "Male") {
     return true;
@@ -42,9 +43,11 @@ selectGender.addEventListener("change", (event) => {
     document.getElementById("counter").innerHTML = "Characters males are  "+ counterMale;
   }
   console.log(charactersFiltered);
+
+
   //limpiando el div que contiene la info de los personajes
   document.getElementById("charactersPage").innerHTML = "";
-  
+  // Mostrar los personajes filtrados
   charactersFiltered.forEach((item) => {
     const div = document.createElement('div');
     div.innerHTML = `Name: ${item.name} <br> Birthday: ${item.birth} <br>  Gender: ${item.gender}`;
@@ -52,24 +55,35 @@ selectGender.addEventListener("change", (event) => {
   });
 });
 
+/*---------------------------------------------------------------*/
+
+// Controlador de eventos para el elemento de búsqueda
+const searchInput = document.getElementById("searchInput");
+searchInput.addEventListener("input", (event) => {
+  const searchText = event.target.value;
+  searchCharacters(searchText);
+});
+
+// FUNCION BUSCAR
+function searchCharacters(searchText) {
+  const charactersFiltered = data.characters.filter((character) => {
+    return character.name.toLowerCase().includes(searchText.toLowerCase());
+  });
+
+  // Limpiar el div que contiene la info de los personajes
+  document.getElementById("charactersPage").innerHTML = "";
+
+  // Mostrar los personajes filtrados
+  charactersFiltered.forEach((item) => {
+    const div = document.createElement("div");
+    div.innerHTML = `Name: ${item.name} <br> Birthday: ${item.birth} <br>  Gender: ${item.gender}`;
+    characterInfo.appendChild(div);
+  });
+}
 
 
 
+/*-------------------------------------------------------------------*/
 
+//FUNCION DE ORDENAR 
 
-/*data.characters.filter(function(filterGender, Gender));
-
-
-
-const optionMale = data.characters.filter(gender);
-function gender (optionMale){
-return true;*/
-
-
-
-
-/*
-Para acortar data
-function myFunction(item, index, arr) {
-    arr[index] = item * 10;
-  }*/

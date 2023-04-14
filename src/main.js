@@ -25,25 +25,25 @@ function femaleFilter(character) {
     return false;
   }
 }
-let newArray;
+//declaramos nueva variable de data
+let newData;
 const selectGender = document.getElementById("selectGender");
-selectGender.addEventListener("change", (event) => {
+selectGender.addEventListener("change", () => {
   console.log(selectGender.value);
-  /*const charactersFiltered = data.characters.filter(maleFilter);*/
-  
+
   let charactersFiltered = [];
   if (selectGender.value === "Female") {
     charactersFiltered = data.characters.filter(femaleFilter);
     const counterFemale = charactersFiltered.length
     console.log(charactersFiltered.length);
-    document.getElementById("counter").innerHTML = "Characters females are  "+ counterFemale;
+    document.getElementById("counter").innerHTML = "Characters females are  " + counterFemale;
   } else {
-    charactersFiltered = data.characters.filter (maleFilter);
+    charactersFiltered = data.characters.filter(maleFilter);
     const counterMale = charactersFiltered.length
-    document.getElementById("counter").innerHTML = "Characters males are  "+ counterMale;
+    document.getElementById("counter").innerHTML = "Characters males are  " + counterMale;
   }
   console.log(charactersFiltered);
-  newArray = charactersFiltered;
+  newData = charactersFiltered;
 
   //limpiando el div que contiene la info de los personajes
   document.getElementById("charactersPage").innerHTML = "";
@@ -66,9 +66,11 @@ searchInput.addEventListener("input", (event) => {
 
 // FUNCION BUSCAR
 function searchCharacters(searchText) {
-  const finishArray = newArray ? newArray : data.characters; 
-  console.log(finishArray);
-  const charactersFiltered = finishArray.filter((character) => {
+  //comparando el nuevo array filtrado (newData) con la data original 
+  const finishData = newData ? newData : data.characters;
+  console.log(finishData);
+  const charactersFiltered = finishData.filter((character) => {
+    //incluir letras mayusculas y minusculas
     return character.name.toLowerCase().includes(searchText.toLowerCase());
   });
 
@@ -89,21 +91,33 @@ function searchCharacters(searchText) {
 
 //FUNCION DE ORDENAR 
 
-const caractersSortered = finishArray.sort((character)=> {
-  const azSort = document.getElementById("azSort");
-  const zaSort = document.getElementById("zaSort");
-
-  azSort.addEventListener("change", (event) => {
-    let charactersSortered = [];
-    if (caractersSortered ){}
-  })
-});
-
-
-document.getElementById("charactersPage").innerHTML = "";
+const selectSort = document.getElementById("selectSort");
+selectSort.addEventListener("change", () => {
+  //value aZ zA
+  const orderByValue = event.target.value;
+  if (orderByValue === "A-z"){
+    //ordenar AZ
+    data.characters.sort((azSort, zaSort) => {
+      if (azSort.name < zaSort.name){
+        return -1;
+      } 
+      return 1;
+    });
+  } else {
+    //ordenar ZA
+    data.characters.sort((azSort, zaSort) => {
+      if (azSort.name > zaSort.name){
+        return -1;
+      } 
+      return 1;
+    });
+  }
+  
+  document.getElementById("charactersPage").innerHTML = "";
   // Mostrar los personajes filtrados
-  charactersFiltered.forEach((item) => {
+  data.characters.forEach((item) => {
     const div = document.createElement("div");
     div.innerHTML = `Name: ${item.name} <br> Birthday: ${item.birth} <br>  Gender: ${item.gender}`;
     characterInfo.appendChild(div);
-
+  });
+});

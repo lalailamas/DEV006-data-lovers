@@ -94,6 +94,8 @@ body {
     font-family: 'Viaoda Libre', cursive;
 }
 
+
+
 #facts {
     border-radius: 50px 50px 50px 50px;
     background: #E3A900;
@@ -102,5 +104,55 @@ body {
     align-self: flex-start;
     padding: 1em;
     margin-left: 19%;
+    text-decoration: none;
 
 }
+
+#facts2 {
+    border-radius: 50px 50px 50px 50px;
+    background: #E3A900;
+    color: white;
+    display: flex;
+    align-self: center;
+    padding: 1em;
+    text-decoration: none;
+
+}
+
+#text {
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 69px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+}
+
+
+
+#tableAncestry {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+.ancestry {
+        box-sizing: border-box;
+        background: #E3A900;
+        border: 4px solid #4B2E20;
+        border-radius: 0px 50px 50px 50px;
+        letter-spacing: 0.1em;
+        padding: 1em;
+        margin: 2em;
+        width: 18em;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        font-family: 'Viaoda Libre', cursive;
+        font-size: 1em;
+}
+

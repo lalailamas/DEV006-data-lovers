@@ -1,6 +1,7 @@
 
 import data from './data/harrypotter/data.js';
 
+
 const characterInfo = document.getElementById('charactersPage');
 
 // MOSTRAR LA DATA
@@ -90,7 +91,6 @@ function searchCharacters(searchText) {
 /*-------------------------------------------------------------------*/
 
 //FUNCION DE ORDENAR 
-
 const selectSort = document.getElementById("selectSort");
 selectSort.addEventListener("change", () => {
   //value aZ zA
@@ -121,3 +121,6 @@ selectSort.addEventListener("change", () => {
     characterInfo.appendChild(div);
   });
 });
+
+
+/*---------------------------------------------------------------*/

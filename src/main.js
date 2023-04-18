@@ -1,6 +1,6 @@
 
 import data from './data/harrypotter/data.js';
-
+import { maleFilter, femaleFilter } from './data.js';
 
 const characterInfo = document.getElementById('charactersPage');
 
@@ -11,39 +11,23 @@ data.characters.forEach((item) => {
   characterInfo.appendChild(div);
 });
 
-// FUNCION FILTRADO
-function maleFilter(character) {
-  if (character.gender === "Male") {
-    return true;
-  } else {
-    return false;
-  }
-}
-function femaleFilter(character) {
-  if (character.gender === "Female") {
-    return true;
-  } else {
-    return false;
-  }
-}
+
 //declaramos nueva variable de data
 let newData;
 const selectGender = document.getElementById("selectGender");
 selectGender.addEventListener("change", () => {
-  console.log(selectGender.value);
-
   let charactersFiltered = [];
+
   if (selectGender.value === "Female") {
     charactersFiltered = data.characters.filter(femaleFilter);
     const counterFemale = charactersFiltered.length
-    console.log(charactersFiltered.length);
     document.getElementById("counter").innerHTML = "Characters females are  " + counterFemale;
   } else {
     charactersFiltered = data.characters.filter(maleFilter);
     const counterMale = charactersFiltered.length
     document.getElementById("counter").innerHTML = "Characters males are  " + counterMale;
   }
-  console.log(charactersFiltered);
+ 
   newData = charactersFiltered;
 
   //limpiando el div que contiene la info de los personajes
@@ -69,7 +53,6 @@ searchInput.addEventListener("input", (event) => {
 function searchCharacters(searchText) {
   //comparando el nuevo array filtrado (newData) con la data original 
   const finishData = newData ? newData : data.characters;
-  console.log(finishData);
   const charactersFiltered = finishData.filter((character) => {
     //incluir letras mayusculas y minusculas
     return character.name.toLowerCase().includes(searchText.toLowerCase());

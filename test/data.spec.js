@@ -1,135 +1,170 @@
-import filter from '../src/main';
 
-//FILTER
-//SORT
 
-describe('filter', () => {
+import { femaleFilter } from '../src/data.js';
+
+//data para ser test funcion filtrar
+const characterTest = [{
+  "id": 587,
+  "name": "Hermione Granger",
+  "birth": "19 September, 1979",
+  "death": null,
+  "species": "Human",
+  "ancestry": "Muggle-born",
+  "gender": "Female",
+  "hair_color": "Brown",
+  "eye_color": "Brown",
+  "wand": "10¾\", vine wood, dragon heartstring",
+  "patronus": "Otter",
+  "house": "Gryffindor",
+  "associated_groups": [
+    "Granger family",
+    "Weasley family",
+    "Potter family",
+    "Hogwarts School of Witchcraft and Wizardry",
+    "Gryffindor",
+    "Slug Club",
+    "S.P.E.W.",
+    "Dumbledore's Army",
+    "Order of the Phoenix",
+    "British Ministry of Magic",
+    "Department for the Regulation and Control of Magical Creatures",
+    "Department of Magical Law Enforcement"
+  ],
+  "books_featured_in": [1, 2, 3, 4, 5, 6, 7]
+},
+{ 
+  "id": 326,
+  "name": "Harry Potter",
+  "birth": "31 July, 1980",
+  "death": null,
+  "species": "Human",
+  "ancestry": "Half-blood",
+  "gender": "Male",
+  "hair_color": "Jet-black",
+  "eye_color": "Bottle green",
+  "wand": "11\", Holly, phoenix feather",
+  "patronus": "Stag",
+  "house": "Gryffindor",
+  "associated_groups": [
+    "Potter family",
+    "Weasley family",
+    "Albus Dumbledore",
+    "Dumbledore's Army",
+    "Order of the Phoenix",
+    "Hogwarts School of Witchcraft and Wizardry",
+    "Gryffindor",
+    "Gryffindor Quidditch team",
+    "Slug Club",
+    "British Ministry of Magic",
+    "Auror Office",
+    "Department of Magical Law Enforcement",
+    "S.P.E.W."
+  ],
+  "books_featured_in": [1, 2, 3, 4, 5, 6, 7]
+},
+{
+  "id": 585,
+  "name": "Miranda Goshawk",
+  "birth": "1921",
+  "death": null,
+  "species": "Human",
+  "ancestry": null,
+  "gender": "Female",
+  "hair_color": "Grey",
+  "eye_color": "Blue",
+  "wand": null,
+  "patronus": null,
+  "house": null,
+  "associated_groups": ["Hogwarts School of Witchcraft and Wizardry"],
+  "books_featured_in": [1, 2, 4]
+},
+{
+  "id": 579,
+  "name": "German-speaking woman",
+  "birth": null,
+  "death": "1 September, 1997",
+  "species": "Human",
+  "ancestry": null,
+  "gender": "Female",
+  "hair_color": null,
+  "eye_color": null,
+  "wand": null,
+  "patronus": null,
+  "house": null,
+  "associated_groups": ["her family"],
+  "books_featured_in": [7]
+},
+{
+  "id": 580,
+  "name": "Gloomy nuns",
+  "birth": null,
+  "death": "Before 1992",
+  "species": "Humans (formerly)",
+  "ancestry": null,
+  "gender": "Females",
+  "hair_color": null,
+  "eye_color": null,
+  "wand": null,
+  "patronus": null,
+  "house": null,
+  "associated_groups": ["Catholic Church"],
+  "books_featured_in": [2]
+},
+{
+  "id": 587,
+  "name": "Hermione Granger",
+  "birth": "19 September, 1979",
+  "death": null,
+  "species": "Human",
+  "ancestry": "Muggle-born",
+  "gender": "Female",
+  "hair_color": "Brown",
+  "eye_color": "Brown",
+  "wand": "10¾\", vine wood, dragon heartstring",
+  "patronus": "Otter",
+  "house": "Gryffindor",
+  "associated_groups": [
+    "Granger family",
+    "Weasley family",
+    "Potter family",
+    "Hogwarts School of Witchcraft and Wizardry",
+    "Gryffindor",
+    "Slug Club",
+    "S.P.E.W.",
+    "Dumbledore's Army",
+    "Order of the Phoenix",
+    "British Ministry of Magic",
+    "Department for the Regulation and Control of Magical Creatures",
+    "Department of Magical Law Enforcement"
+  ],
+  "books_featured_in": [1, 2, 3, 4, 5, 6, 7]
+},
+{
+  "id": 585,
+  "name": "Miranda Goshawk",
+  "birth": "1921",
+  "death": null,
+  "species": "Human",
+  "ancestry": null,
+  "gender": "Female",
+  "hair_color": "Grey",
+  "eye_color": "Blue",
+  "wand": null,
+  "patronus": null,
+  "house": null,
+  "associated_groups": ["Hogwarts School of Witchcraft and Wizardry"],
+  "books_featured_in": [1, 2, 4]
+},
+]
+
+//testear si es una función y si los personajes son mujeres
+describe("femaleFilter", () => {
+
   it('is a function', () => {
-    expect(typeof filter).toBe('function');
+    expect(typeof femaleFilter).toBe('function');
   });
 
-  it('returns `example`', () => {
-    expect(example()).toBe('example');
+  it('should return false for females characters', () => {
+    expect(femaleFilter(characterTest, "Female")).toBe(false);
   });
 });
-
-
-describe('anotherExample', () => {
-  it('is a function', () => {
-    expect(typeof anotherExample).toBe('function');
-  });
-
-  it('returns `anotherExample`', () => {
-    expect(anotherExample()).toBe('OMG');
-  });
-});
-
-
-//TEST DE PROYECTO ANTERIOR
-
-// [Español]
-// Importamos el objeto `cipher`, que contiene los métodos `encode` y `decode`
-
-/*
-import cipher from '../src/cipher';
-
-describe('cipher', () => {
-
-  it('should be an object', () => {
-    expect(typeof cipher).toBe('object');
-  });
-
-  describe('cipher.encode', () => {
-
-    it('should be a function', () => {
-      expect(typeof cipher.encode).toBe('function');
-    });
-
-    it('should throw TypeError when invoked with wrong argument types', () => {
-      expect(() => cipher.encode()).toThrow(TypeError);
-      expect(() => cipher.encode(0)).toThrow(TypeError);
-      expect(() => cipher.encode(null, [])).toThrow(TypeError);
-      expect(() => cipher.encode(0, 0)).toThrow(TypeError);
-    });
-
-    it('should return "HIJKLMNOPQRSTUVWXYZABCDEFG" for "ABCDEFGHIJKLMNOPQRSTUVWXYZ" with offset 33', () => {
-      expect(cipher.encode(33, 'ABCDEFGHIJKLMNOPQRSTUVWXYZ')).toBe('HIJKLMNOPQRSTUVWXYZABCDEFG');
-    });
-
-    // Hacker edition
-    //
-    // [Español]
-    // Si decides agregar soporte para minúsculas descomenta el test a
-    // continuación.
-    //
-    // [Português]
-    // Se quiser adicionar testes para letras minúsculas, descomente o teste
-    // abaixo.
-    //
-    // it('should return "hijklmnopqrstuvwxyzabcdefg" for "abcdefghijklmnopqrstuvwxyz" with offset 33', () => {
-    //   expect(cipher.encode(33, 'abcdefghijklmnopqrstuvwxyz')).toBe('hijklmnopqrstuvwxyzabcdefg');
-    // });
-
-    // Hacker edition
-    //
-    // [Español]
-    // Si decides implementar soporte para caracteres no alfabéticos descomenta
-    // el test a continuación.
-    //
-    // [Português]
-    // Se quiser adicionar testes para caracteres não alfabéticos, descomente o
-    // teste abaixo.
-    //
-    // it('should return " !@" for " !@"', () => {
-    //   expect(cipher.encode(33, ' !@')).toBe(' !@');
-    // });
-  });
-
-  describe('cipher.decode', () => {
-
-    it('should be a function', () => {
-      expect(typeof cipher.decode).toBe('function');
-    });
-
-    it('should throw TypeError when invoked with wrong argument types', () => {
-      expect(() => cipher.decode()).toThrow(TypeError);
-      expect(() => cipher.decode(0)).toThrow(TypeError);
-      expect(() => cipher.decode(null, [])).toThrow(TypeError);
-      expect(() => cipher.decode(0, 0)).toThrow(TypeError);
-    });
-
-    it('should return "ABCDEFGHIJKLMNOPQRSTUVWXYZ" for "HIJKLMNOPQRSTUVWXYZABCDEFG" with offset 33', () => {
-      expect(cipher.decode(33, 'HIJKLMNOPQRSTUVWXYZABCDEFG')).toBe('ABCDEFGHIJKLMNOPQRSTUVWXYZ');
-    });
-
-    //
-    // Hacker edition
-    //
-    // [Español]
-    // Si decides agregar soporte para minúsculas descomenta el test a
-    // continuación.
-    //
-    // [Português]
-    // Se quiser adicionar testes para letras minúsculas, descomente o teste
-    // abaixo.
-    //
-    // it('should return "abcdefghijklmnopqrstuvwxyz" for "hijklmnopqrstuvwxyzabcdefg" with offset 33', () => {
-    //   expect(cipher.decode(33, 'hijklmnopqrstuvwxyzabcdefg')).toBe('abcdefghijklmnopqrstuvwxyz');
-    // });
-
-    // Hacker edition
-    //
-    // [Español]
-    // Si decides implementar soporte para caracteres no alfabéticos descomenta
-    // el test a continuación.
-    //
-    // [Português]
-    // Se quiser adicionar testes para caracteres não alfabéticos, descomente o
-    // teste abaixo.
-    //
-    // it('should return " !@" para " !@"', () => {
-    //   expect(cipher.decode(33, ' !@')).toBe(' !@');
-    // });
-  });
-
-});*/

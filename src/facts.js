@@ -3,6 +3,10 @@
 //import, export
 import data from './data/harrypotter/data.js';
 
+const pureBlood = document.getElementById("pureBlood");
+const muggle = document.getElementById("muggle");
+const pureBloodorHalf = document.getElementById("pureBloodorHalf");
+const halfBlood = document.getElementById("halfBlood");
 
 data.characters.forEach((item) => {
   if (item.ancestry === "Pure-blood"){

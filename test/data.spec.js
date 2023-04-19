@@ -1,8 +1,8 @@
 
 
-import { femaleFilter } from '../src/data.js';
-import { searchCharacters } from '../src/main.js';
-searchCharacters
+import { femaleFilter, maleFilter } from '../src/data.js';
+/*import { searchCharacters } from '../src/main.js';
+searchCharacters*/
 
 //data para ser test funcion filtrar
 /*const characterTest = [
@@ -32,7 +32,7 @@ searchCharacters
   },
 ]*/
 
-const characterTest2 = {
+const characterTestFemale = {
   "name": "Hermione Granger",
   "gender": "Female",
 }
@@ -44,8 +44,24 @@ describe("femaleFilter", () => {
     expect(typeof femaleFilter).toBe('function');
   });
 
-  it('should return false for females characters', () => {
-    expect(femaleFilter(characterTest2, "Female")).toBe(true);
+  it('should return true for females characters', () => {
+    expect(femaleFilter(characterTestFemale, "Female")).toBe(true);
   });
-}); 
+});
 
+const characterTestMale = {
+  "name": "Ladislaw Zamojski",
+  "gender": "Male",
+}
+
+//testear si es una función y si los personajes son hombres
+describe("maleFilter", () => {
+
+  it('is a function', () => {
+    expect(typeof maleFilter).toBe('function');
+  });
+
+  it('should return true for males characters', () => {
+    expect(maleFilter(characterTestMale, "Male")).toBe(true);
+  });
+});

@@ -1,43 +1,10 @@
 
 
 import { femaleFilter, maleFilter } from '../src/data.js';
-/*import { searchCharacters } from '../src/main.js';
-searchCharacters*/
+import { searchCharacters } from '../src/main.js';
 
-//data para ser test funcion filtrar
-/*const characterTest = [
-  {
-    "name": "Hermione Granger",
-    "gender": "Female",
-  },
-  {
-    "name": "Harry Potter",
-    "gender": "Male",
-  },
-  {
-    "name": "Miranda Goshawk",
-    "gender": "Female",
-  },
-  {
-    "name": "German-speaking woman",
-    "gender": "Female",
-  },
-  {
-    "name": "Gloomy nuns",
-    "gender": "Females",
-  },
-  {
-    "name": "Miranda Goshawk",
-    "gender": "Female",
-  },
-]*/
 
-const characterTestFemale = {
-  "name": "Hermione Granger",
-  "gender": "Female",
-}
-
-//testear si es una función y si los personajes son mujeres
+//función filtrado
 describe("femaleFilter", () => {
 
   it('is a function', () => {
@@ -45,16 +12,16 @@ describe("femaleFilter", () => {
   });
 
   it('should return true for females characters', () => {
-    expect(femaleFilter(characterTestFemale, "Female")).toBe(true);
+    const characterTestFemale = { gender: 'Female'};
+    expect(femaleFilter(characterTestFemale)).toBe(true);
   });
-});
 
-const characterTestMale = {
-  "name": "Ladislaw Zamojski",
-  "gender": "Male",
-}
+  it('should return false for males characters', () => {
+    const characterTestFemale = { gender: 'Male'};
+    expect(femaleFilter(characterTestFemale)).toBe(false);
+  });
+})
 
-//testear si es una función y si los personajes son hombres
 describe("maleFilter", () => {
 
   it('is a function', () => {
@@ -62,6 +29,23 @@ describe("maleFilter", () => {
   });
 
   it('should return true for males characters', () => {
-    expect(maleFilter(characterTestMale, "Male")).toBe(true);
+    const characterTestMale = {gender: 'Male'};
+    expect(maleFilter(characterTestMale)).toBe(true);
   });
-});
+
+  it('should return true for males characters', () => {
+    const characterTestMale = {gender: 'Female'};
+    expect(maleFilter(characterTestMale)).toBe(false);
+  });
+})
+
+//función buscar
+describe("searchCharacters"), () => {
+  it('is a function', () => {
+    expect(typeof searchCharacters).toBe('function');
+  });
+
+
+
+
+}

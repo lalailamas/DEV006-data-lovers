@@ -18,7 +18,7 @@ export function maleFilter(character) {
     return false;
   }
 }
-export function femaleFilter(character) {
+export function femaleFilter(character={}) {
   if (character.gender === "Female") {
     return true;
   } else {

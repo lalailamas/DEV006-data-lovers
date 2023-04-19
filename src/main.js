@@ -50,7 +50,7 @@ searchInput.addEventListener("input", (event) => {
 });
 
 // FUNCION BUSCAR
-function searchCharacters(searchText) {
+export function searchCharacters(searchText) {
   //comparando el nuevo array filtrado (newData) con la data original 
   const finishData = newData ? newData : data.characters;
   const charactersFiltered = finishData.filter((character) => {
@@ -69,7 +69,6 @@ function searchCharacters(searchText) {
     characterInfo.appendChild(div);
   });
 }
-
 
 /*-------------------------------------------------------------------*/
 

@@ -57,7 +57,7 @@ body{
 
 #footer {
     font-style: oblique;
-    text-align: center;
+    text-align: left;
  }
  
 @media screen and (min-width: 1200px){

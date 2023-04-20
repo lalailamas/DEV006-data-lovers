@@ -1,7 +1,6 @@
 
 
-import { femaleFilter, maleFilter } from '../src/data.js';
-import { searchCharacters } from '../src/main.js';
+import { femaleFilter, maleFilter, formatCharacters, sortCharacters, filterByName } from '../src/data.js';
 
 
 //función filtrado
@@ -12,12 +11,12 @@ describe("femaleFilter", () => {
   });
 
   it('should return true for females characters', () => {
-    const characterTestFemale = { gender: 'Female'};
+    const characterTestFemale = { gender: 'Female' };
     expect(femaleFilter(characterTestFemale)).toBe(true);
   });
 
   it('should return false for males characters', () => {
-    const characterTestFemale = { gender: 'Male'};
+    const characterTestFemale = { gender: 'Male' };
     expect(femaleFilter(characterTestFemale)).toBe(false);
   });
 })
@@ -29,23 +28,83 @@ describe("maleFilter", () => {
   });
 
   it('should return true for males characters', () => {
-    const characterTestMale = {gender: 'Male'};
+    const characterTestMale = { gender: 'Male' };
     expect(maleFilter(characterTestMale)).toBe(true);
   });
 
   it('should return true for males characters', () => {
-    const characterTestMale = {gender: 'Female'};
+    const characterTestMale = { gender: 'Female' };
     expect(maleFilter(characterTestMale)).toBe(false);
   });
 })
 
-//función buscar
-describe("searchCharacters"), () => {
+//función que muestra y recorre data 
+describe("formatCharacters", () => {
+
   it('is a function', () => {
-    expect(typeof searchCharacters).toBe('function');
+    expect(typeof formatCharacters).toBe('function');
   });
 
+  it('should return data of characters', () => {
+    const characterTestData =
+      [
+        { name: "Stewart Ackerley", birth: "between 1 September 1982and 31 August 1983", gender: "Male", ancestry: "Pureblood" },
+        { name: "Ivonne", birth: "Marzo 1991", gender: "Female", ancestry: "Pureblood" },
+      ]
+    expect(formatCharacters(characterTestData)).toEqual(
+      [
+        { name: "Stewart Ackerley", birth: "between 1 September 1982and 31 August 1983", gender:"Male"},
+        { name: "Ivonne", birth: "Marzo 1991", gender: "Female"},
+      ]);
+  })
+})
+
+// función ordenar 
+describe("sortCharacters", () => {
+
+  it('is a function', () => {
+    expect(typeof sortCharacters).toBe('function');
+  });
+
+  it('should return order ZA of characters', () => {
+    const charactersOrderedZa = 
+    [
+      {name:"Alejandra"}, {name:"Camila"},{name:"Beatriz"},
+    ]
+    expect(sortCharacters(charactersOrderedZa,"Z-a" )).toEqual( 
+      [
+        {name:"Camila"}, {name:"Beatriz"} ,{name:"Alejandra"}
+      ]
+    )})
 
 
+  it('should return order AZ of characters', () => {
+    const charactersOrderedAz = 
+      [
+        {name:"Camila"}, {name:"Beatriz"} ,{name:"Alejandra"}
+      ]
+    expect(sortCharacters(charactersOrderedAz, "A-z")).toEqual( 
+      [
+        {name:"Alejandra"}, {name:"Beatriz"},{name:"Camila"},
+      ]
+    )})
+});
 
-}
+//función buscador
+describe("filterByName", () => {
+
+  it('is a function', () => {
+    expect(typeof filterByName).toBe('function');
+  });
+
+  it('should return characters filtered', () => {
+    const charactersFilteredTest = 
+      [
+        {name:"Hermione"}, {name:"Harry Potter"} ,{name:"Harry Style"}
+      ]
+    expect(filterByName(charactersFilteredTest, "Harr")).toEqual( 
+      [
+        {name:"Harry Potter"}, {name:"Harry Style"},
+      ]
+    )})
+});

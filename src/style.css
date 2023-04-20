@@ -60,6 +60,9 @@ body{
     text-align: left;
  }
  
+
+
+
 @media screen and (min-width: 1200px){
     .container{
         display: flex;

@@ -2,4 +2,57 @@
 
 <html>
     
+
+<head>
+    <meta charset="utf-8">
+    <title>Spells</title>
+    <link rel="stylesheet" href="optionsMenu.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Viaoda+Libre&display=swap" rel="stylesheet" family="Viaoda">
+</head>
+
+<body id="background2">
+    <div class="home">
+        <a href="index.html"><img src="../images/boton home.svg" alt="botonHome" width="30em"></a>
+    </div>
+
+    <div class="title-page">
+        Spells
+    </div>
+
+    <div class="data">
+        <select id="selectSpellType">
+            <option value="" disabled selected>Filter</option>
+            <option value="Charm" id="Charm"> Charm</option>
+            <option value="Transfiguration" id="Transfiguration"> Transfiguration</option>
+            <option value="Hex" id="Hex">Hex</option>
+            <option value="Jinx" id="Jinx">Jinx</option>
+            <option value="Curse" id="Curse">Curse</option>
+            <option value="Transportation" id="Transportation">Transportation</option>
+            <option value="Healing" id="Healing">Healing</option>
+        </select>
+
+        <select id="selectSortSpell">
+            <option value="" disabled selected>Sort</option>
+            <option id="azSort" value="A-z"> A-Z</option>
+            <option id="zaSort" value="Z-a"> Z-A</option>
+        </select>
+
+    </div>
+
+    <div class="spellsPage" id="spellsPage">
+        <div class="spellsPageInner">
+            <div class="spellsPageFront">
+            </div>
+            <div class="spellsPageBack">
+            </div>
+        </div>
+    </div>
+
+
+    <script src="spells.js" type="module"></script>
+</body>
+
+
 </html>

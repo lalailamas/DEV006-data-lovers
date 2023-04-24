@@ -10,8 +10,8 @@ const formattedCharacters = formatCharacters(data.characters);
 formattedCharacters.forEach((item) => {
   const div = document.createElement('div');
   div.innerHTML =
-    `Name: ${item.name}
-   Birthday: ${item.birth} 
+    `Name: ${item.name} <br> 
+   Birthday: ${item.birth} <br>
    Gender: ${item.gender}`;
   characterInfo.appendChild(div);
 });

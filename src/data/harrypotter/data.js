@@ -12069,6 +12069,7 @@ export default {
       "mention": null,
       "etymology": null,
       "note": null
+
     },
     {
       "id": 2,

@@ -67,8 +67,9 @@ export function formatBooks(books) {
       description: item.description,
       releaseDay: item.releaseDay
     }
-})
+  });
 }
+
 
 // FUNCION QUE RECORRE DATA SPELLS
 export function formatSpells(spells) {
@@ -92,9 +93,20 @@ export function sortBooks(books, orderByValue) {
   if (orderByValue === "A-z") {
     // ordenar AZ
     return books.sort((azSort, zaSort) => {
-      if (azSort.title < zaSort.title) 
-     }
-    )}
+      if (azSort.title < zaSort.title) {
+        return -1;
+      }
+      return 1;
+    });
+  } else {
+    // ordenar ZA
+    return books.sort((azSort, zaSort) => {
+      if (azSort.title > zaSort.title) {
+        return -1;
+      }
+      return 1;
+    });
+  }
 }
 
 //FUNCION FILTRAR DATA SPELLS
@@ -149,7 +161,7 @@ export function healingFilter(spells) {
 }
 
 //FUNCION ORDENAR SPELLS
-export function sortSpells (spells, orderByLetters) {
+export function sortSpells(spells, orderByLetters) {
   if (orderByLetters === "A-z") {
     // ordenar AZ
     return spells.sort((azSort, zaSort) => {
@@ -160,14 +172,16 @@ export function sortSpells (spells, orderByLetters) {
     });
   } else {
     // ordenar ZA
-    return books.sort((azSort, zaSort) => {
-      if (azSort.title > zaSort.title) {
     return spells.sort((azSort, zaSort) => {
-      if (azSort.name > zaSort.name) {
-        return -1;
+      if (azSort.title > zaSort.title) {
+        return spells.sort((azSort, zaSort) => {
+          if (azSort.name > zaSort.name) {
+            return -1;
+          }
+          return 1;
+        });
       }
-      return 1;
-    });
-      }}
-    )} 
+    }
+    )
   }
+}

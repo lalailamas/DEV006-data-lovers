@@ -58,3 +58,43 @@ export function filterByName(characters, searchText) {
     return character.name.toLowerCase().includes(searchText.toLowerCase());
   });
 }
+
+
+// FUNCION QUE RECORRE DATA BOOKS
+export function formatBooks(books) {
+  return books.map((item) => {
+    return {
+      title: item.title,
+      image: item.image,
+      description: item.description,
+      releaseDay: item.releaseDay
+    }
+  });
+}
+
+//Funcion para crear la imagen 
+export function createImage(url) {
+  return `<img class="imageBook" src="${url}" alt="harryBooks" width="300"> `;
+}
+
+
+//FUNCION ORDENAR BOOKS
+export function sortBooks(books, orderByValue) {
+  if (orderByValue === "A-z") {
+    // ordenar AZ
+    return books.sort((azSort, zaSort) => {
+      if (azSort.title < zaSort.title) {
+        return -1;
+      }
+      return 1;
+    });
+  } else {
+    // ordenar ZA
+    return books.sort((azSort, zaSort) => {
+      if (azSort.title > zaSort.title) {
+        return -1;
+      }
+      return 1;
+    });
+  }
+}

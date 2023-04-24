@@ -16,7 +16,6 @@ formattedCharacters.forEach((item) => {
   characterInfo.appendChild(div);
 });
 
-
 //Declaramos nueva variable de data para unificar funciones
 let newData;
 
@@ -99,3 +98,5 @@ function renderCharacters(characters) {
     characterInfo.appendChild(div);
   });
 }
+
+

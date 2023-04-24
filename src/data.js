@@ -58,3 +58,88 @@ export function filterByName(characters, searchText) {
     return character.name.toLowerCase().includes(searchText.toLowerCase());
   });
 }
+
+// FUNCION QUE RECORRE DATA SPELLS
+export function formatSpells(spells) {
+  return spells.map((item) => {
+    return {
+      name: item.name,
+      spell_type: item.spell_type,
+      description: item.description,
+    }
+  });
+}
+
+//FUNCION FILTRAR DATA SPELLS
+export function charmFilter(spells) {
+  if (spells.spell_type === "Charm") {
+    return true;
+  } else {
+    return false;
+  }
+}
+export function tranfigurationFilter(spells) {
+  if (spells.spell_type === "Transfiguration") {
+    return true;
+  } else {
+    return false;
+  }
+}
+export function hexFilter(spells) {
+  if (spells.spell_type === "Hex") {
+    return true;
+  } else {
+    return false;
+  }
+}
+export function jinxFilter(spells) {
+  if (spells.spell_type === "Jinx") {
+    return true;
+  } else {
+    return false;
+  }
+}
+export function curseFilter(spells) {
+  if (spells.spell_type === "Curse") {
+    return true;
+  } else {
+    return false;
+  }
+}
+export function transportationFilter(spells) {
+  if (spells.spell_type === "Transportation") {
+    return true;
+  } else {
+    return false;
+  }
+}
+export function healingFilter(spells) {
+  if (spells.spell_type === "Healing Spell") {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+//FUNCION ORDENAR SPELLS
+export function sortSpells (spells, orderByLetters) {
+  if (orderByLetters === "A-z") {
+    // ordenar AZ
+    return spells.sort((azSort, zaSort) => {
+      if (azSort.name < zaSort.name) {
+        return -1;
+      }
+      return 1;
+    });
+  } else {
+    // ordenar ZA
+    return spells.sort((azSort, zaSort) => {
+      if (azSort.name > zaSort.name) {
+        return -1;
+      }
+      return 1;
+    });
+  }
+}
+
+

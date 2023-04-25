@@ -77,6 +77,7 @@ export function formatSpells(spells) {
     return {
       name: item.name,
       spell_type: item.spell_type,
+      pronunciation: item.pronunciation,
       description: item.description,
     }
   });

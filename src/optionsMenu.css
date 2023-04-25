@@ -74,6 +74,7 @@ body {
     border: 3px solid #E3A900;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     backdrop-filter: blur(2px);
+    width: 15%;
 }
 
 #selectSort {
@@ -134,7 +135,7 @@ body {
     align-self: flex-start;
     justify-content: space-evenly;
     padding: 1em;
-    margin-left: 17%;
+    margin-left: 14%;
     text-decoration: none;
     width: 14vw;
     border: 2px solid #4B2E20;
@@ -153,7 +154,7 @@ body {
 }
 
 #text {
-    font-family: 'Arial';
+    font-family: 'Viaoda Libre', cursive;
     font-style: normal;
     font-weight: 400;
     font-size: 20px;
@@ -190,6 +191,50 @@ body {
         
 }
 
+/* ESTILOS DE LA PAGINA BOOKS */
+
+
+#textBooks {
+    font-family: 'Viaoda Libre', cursive;
+    display: flex;
+    align-items: center;
+    font-size: 1em;
+}
+
+#dataInBooks {
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+    width: 100%;
+}
+
+
+#cardBook {
+    display: flex;
+   text-align: center;
+    flex-wrap: wrap;
+    padding: 5em;
+    gap: 7em;
+    font-family: 'Viaoda Libre', cursive;
+}
+
+
+.imageBook {
+    transition: transform 0.5s ease-in, opacity 0.2s ease-in-out;
+    transform-origin: center;
+  }
+
+  .imageBook:hover {
+    transform: rotateY(180deg);
+    background-color: white;
+    opacity: 0.2;
+  }
+
+  .imageBook:active {
+    transform: rotate(0deg);
+    background-color: transparent;
+    opacity: 10;
+  }
 
 .spellsPage {
     background-color: red;

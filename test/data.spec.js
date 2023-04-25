@@ -1,6 +1,6 @@
 
 
-import { femaleFilter, maleFilter, formatCharacters, sortCharacters, filterByName } from '../src/data.js';
+import { femaleFilter, maleFilter, formatCharacters, sortCharacters, filterByName, formatBooks } from '../src/data.js';
 
 
 //función filtrado
@@ -108,3 +108,32 @@ describe("filterByName", () => {
       ]
     )})
 });
+
+// TEST FUNCIONES BOOKS
+// Funcion Mostrar Books
+
+describe("formatBooks", () => {
+
+  it('is a function', () => {
+    expect(typeof formatCharacters).toBe('function');
+  });
+
+  it('should return data of characters', () => {
+    const BooksData =
+      [
+        { id: 5, title:"Harry Potter and the Goblet of Fire", image:"./images/GobletofFire.png", releaseDay: "July 8, 2000", author: "J. K. Rowling" },
+        { id:2, title: "Harry Potter and the Order of the Phoenix", image:"./images/OrderofthePhoenix.png", releaseDay: "June 21, 2003", author: "J. K. Rowling"},
+      ]
+    expect(formatBooks(BooksData)).toEqual(
+      [
+        { title:"Harry Potter and the Goblet of Fire", image:"./images/GobletofFire.png", releaseDay: "July 8, 2000" },
+        { title: "Harry Potter and the Order of the Phoenix", image:"./images/OrderofthePhoenix.png", releaseDay: "June 21, 2003"},
+      ]);
+  })
+})
+
+
+
+
+  
+      

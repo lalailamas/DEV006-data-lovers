@@ -1,8 +1,6 @@
 
 //aqui es donde van las funciones puras 
 
-
-
 // FUNCION FILTRADO
 export function maleFilter(character) {
   if (character.gender === "Male") {
@@ -59,6 +57,20 @@ export function filterByName(characters, searchText) {
   });
 }
 
+
+// FUNCION QUE RECORRE DATA BOOKS
+export function formatBooks(books) {
+  return books.map((item) => {
+    return {
+      title: item.title,
+      image: item.image,
+      description: item.description,
+      releaseDay: item.releaseDay
+    }
+  });
+}
+
+
 // FUNCION QUE RECORRE DATA SPELLS
 export function formatSpells(spells) {
   return spells.map((item) => {
@@ -68,6 +80,33 @@ export function formatSpells(spells) {
       description: item.description,
     }
   });
+}
+
+//Funcion para crear la imagen 
+export function createImage(url) {
+  return `<img class="imageBook" src="${url}" alt="harryBooks" width="300"> `;
+}
+
+
+//FUNCION ORDENAR BOOKS
+export function sortBooks(books, orderByValue) {
+  if (orderByValue === "A-z") {
+    // ordenar AZ
+    return books.sort((azSort, zaSort) => {
+      if (azSort.title < zaSort.title) {
+        return -1;
+      }
+      return 1;
+    });
+  } else {
+    // ordenar ZA
+    return books.sort((azSort, zaSort) => {
+      if (azSort.title > zaSort.title) {
+        return -1;
+      }
+      return 1;
+    });
+  }
 }
 
 //FUNCION FILTRAR DATA SPELLS
@@ -122,7 +161,7 @@ export function healingFilter(spells) {
 }
 
 //FUNCION ORDENAR SPELLS
-export function sortSpells (spells, orderByLetters) {
+export function sortSpells(spells, orderByLetters) {
   if (orderByLetters === "A-z") {
     // ordenar AZ
     return spells.sort((azSort, zaSort) => {
@@ -134,12 +173,15 @@ export function sortSpells (spells, orderByLetters) {
   } else {
     // ordenar ZA
     return spells.sort((azSort, zaSort) => {
-      if (azSort.name > zaSort.name) {
-        return -1;
+      if (azSort.title > zaSort.title) {
+        return spells.sort((azSort, zaSort) => {
+          if (azSort.name > zaSort.name) {
+            return -1;
+          }
+          return 1;
+        });
       }
-      return 1;
-    });
+    }
+    )
   }
 }
-
-

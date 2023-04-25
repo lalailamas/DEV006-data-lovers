@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Books</title>
+    <link rel="stylesheet" href="optionsMenu.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Viaoda+Libre&display=swap" rel="stylesheet" family="Viaoda">
+
+</head>
+
+<body id="background2">
+    <div class="home">
+        <a href="index.html"><img src="../images/boton home.svg" alt="botonHome" width="30em"></a>
+    </div>
+    <div class="title-page">
+        Books
+    </div>
+
+    <div id="infoBooks">
+        <p id="textBooks"> The Harry Potter books have been translated into over 80 languages, 
+            won multiple awards, and sold more than 500 million copies worldwide, 
+            becoming the best-selling book series in history.</p>
+    </div>
+    <section id="allInfo">
+        <aside id = "dataInBooks" class="data">
+            <!--<input id="searchInput" type="search" placeholder="Search">-->
+            <select id="selectSortBooks" width="40%">
+                <option value="" disabled selected>Sort</option>
+                <option id="azSort" value="A-z"> A-Z</option>
+                <option id="zaSort" value="Z-a"> Z-A</option>
+            </select>
+        </aside>
+        <div id ="allCardsBooks" class="allCardsBooks">
+            <div id="cardBook" class="cardBook"></div>
+        </div>
+    </section>
+    
+
+    <script src="books.js" type="module"></script>
+</body>
+
+</html>

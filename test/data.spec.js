@@ -1,6 +1,6 @@
 
 
-import { femaleFilter, maleFilter, formatCharacters, sortCharacters, filterByName, formatBooks } from '../src/data.js';
+import { femaleFilter, maleFilter, formatCharacters, sortCharacters, filterByName, formatBooks, sortBooks } from '../src/data.js';
 
 
 //función filtrado
@@ -77,7 +77,6 @@ describe("sortCharacters", () => {
       ]
     )})
 
-
   it('should return order AZ of characters', () => {
     const charactersOrderedAz = 
       [
@@ -118,7 +117,7 @@ describe("formatBooks", () => {
     expect(typeof formatCharacters).toBe('function');
   });
 
-  it('should return data of characters', () => {
+  it('should return data of books', () => {
     const BooksData =
       [
         { id: 5, title:"Harry Potter and the Goblet of Fire", image:"./images/GobletofFire.png", releaseDay: "July 8, 2000", author: "J. K. Rowling" },
@@ -132,6 +131,36 @@ describe("formatBooks", () => {
   })
 })
 
+// Funcion Mostrar Books
+
+describe("sortBooks", () => {
+
+  it('is a function', () => {
+    expect(typeof sortBooks).toBe('function');
+  });
+
+  it('should return order ZA of books', () => {
+    const booksOrderedZa = 
+    [
+      {title:"sorcerers"}, {title:"prisoner"},{title:"chamber"},
+    ]
+    expect(sortBooks(booksOrderedZa,"Z-a" )).toEqual( 
+      [
+        {title:"sorcerers"}, {title:"prisoner"} ,{title:"chamber"}
+      ]
+    )})
+    
+  it('should return order AZ of books', () => {
+    const booksOrderedAz = 
+      [
+        {title:"sorcerers"}, {title:"chamber"} ,{title:"prisoner"}
+      ]
+    expect(sortBooks(booksOrderedAz, "A-z")).toEqual( 
+      [
+        {title:"chamber"}, {title:"prisoner"},{title:"sorcerers"},
+      ]
+    )})
+})
 
 
 

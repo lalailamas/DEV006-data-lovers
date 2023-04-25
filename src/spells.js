@@ -29,7 +29,7 @@ formattedSpells.forEach((item) => {
 
 
 //Función filtrado spells
-let newData;
+
 const selectSpellType = document.getElementById("selectSpellType");
 selectSpellType.addEventListener("change", () => {
   let spellFiltered = [];
@@ -48,7 +48,6 @@ selectSpellType.addEventListener("change", () => {
   } else if (selectSpellType.value === "Healing"){    
     spellFiltered = data.spells.filter (healingFilter);
   }
-  newData = spellFiltered;
 
   document.getElementById("spellsPage").innerHTML = "";
   spellFiltered.forEach((item) => {

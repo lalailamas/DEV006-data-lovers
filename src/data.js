@@ -73,6 +73,7 @@ export function formatSpells(spells) {
 //FUNCION FILTRAR DATA SPELLS
 export function charmFilter(spells) {
   if (spells.spell_type === "Charm") {
+    
     return true;
   } else {
     return false;
@@ -131,15 +132,6 @@ export function sortSpells (spells, orderByLetters) {
       }
       return 1;
     });
-  } else {
-    // ordenar ZA
-    return spells.sort((azSort, zaSort) => {
-      if (azSort.name > zaSort.name) {
-        return -1;
-      }
-      return 1;
-    });
-  }
+  } 
 }
-
 

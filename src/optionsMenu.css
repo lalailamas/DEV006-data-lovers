@@ -163,6 +163,7 @@ body {
     align-items: center;
     text-align: center;
     color: #000000;
+    letter-spacing: 0.1em;
 }
 
 
@@ -187,6 +188,7 @@ body {
         flex-wrap: wrap;
         font-family: 'Viaoda Libre', cursive;
         font-size: 1em;
+        flex-direction: column;
         
 }
 
@@ -306,11 +308,6 @@ body {
     transform: rotateX(180deg);
     padding-top: 10em;
     text-align: center;
-
-<<<<<<< HEAD
-
-  } 
-=======
   }
 
 /* AQUI EMPIEZa LA JODA */
@@ -353,4 +350,3 @@ body {
     color: white;
     transform: rotateY(180deg);
   }
->>>>>>> 3f48e97d15c20b089cbb060224257db56b9e38a6

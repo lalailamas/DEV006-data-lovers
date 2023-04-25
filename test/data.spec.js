@@ -1,8 +1,9 @@
 
 
-import { femaleFilter, maleFilter, formatCharacters, sortCharacters, filterByName, formatBooks, sortBooks } from '../src/data.js';
+import { femaleFilter, maleFilter, formatCharacters, sortCharacters, filterByName, formatBooks, sortBooks, charmFilter
+  ,tranfigurationFilter, hexFilter, jinxFilter, curseFilter, transportationFilter, healingFilter, formatSpells, sortSpells} from '../src/data.js';
 
-
+//TEST CHARACTERS
 //función filtrado
 describe("femaleFilter", () => {
 
@@ -161,6 +162,134 @@ describe("sortBooks", () => {
       ]
     )})
 })
+
+// TEST SPELLS
+//Función mostrar data spells
+describe("formatSpells", () => {
+
+  it('is a function', () => {
+    expect(typeof formatSpells).toBe('function');
+  });
+
+  it('should return data of spells', () => {
+    const spellsTestData =
+      [
+        { name: "Evanesce", spell_type: "Transfiguration", pronunciation: "ev-an-ES-key", description: "Vanishes the target", mention:"null" },
+        { name: "Feather-light charm", spell_type: "Charm", pronunciation: "null", description: "Makes an object light as a feather.", mention: "Harry Potter contemplated using this in 1993 to lighten his trunk so that he could carry it by broom to Gringotts, though he decided against it." },
+      ]
+    expect(formatSpells(spellsTestData)).toEqual(
+      [
+        {name: "Evanesce", spell_type: "Transfiguration", pronunciation: "ev-an-ES-key", description: "Vanishes the target"},
+        { name: "Feather-light charm", spell_type: "Charm", pronunciation: "null", description: "Makes an object light as a feather."},
+      ]);
+  })
+})
+
+//Función filtrado
+describe("charmFilter", () => {
+
+  it('is a function', () => {
+    expect(typeof charmFilter).toBe('function');
+  });
+
+  it('should return true for charm spells', () => {
+    const spellsTestCharm = { spell_type: 'Charm' };
+    expect(charmFilter(spellsTestCharm)).toBe(true);
+  });
+
+})
+
+describe("tranfigurationFilter", () => {
+
+  it('is a function', () => {
+    expect(typeof tranfigurationFilter).toBe('function');
+  });
+
+  it('should return true for transfiguration spells', () => {
+    const spellsTestTransfiguration = { spell_type: 'Transfiguration' };
+    expect(tranfigurationFilter(spellsTestTransfiguration)).toBe(true);
+  });
+})
+
+describe("hexFilter", () => {
+
+  it('is a function', () => {
+    expect(typeof hexFilter).toBe('function');
+  });
+
+  it('should return true for hex spells', () => {
+    const spellsTestTransfiguration= { spell_type: 'Hex' };
+    expect(hexFilter(spellsTestTransfiguration)).toBe(true);
+  });
+})
+
+describe("jinxFilter", () => {
+
+  it('is a function', () => {
+    expect(typeof jinxFilter).toBe('function');
+  });
+
+  it('should return true for jinx spells', () => {
+    const spellsTestJinx= { spell_type: 'Jinx' };
+    expect(jinxFilter(spellsTestJinx)).toBe(true);
+  });
+})
+
+describe("curseFilter", () => {
+
+  it('is a function', () => {
+    expect(typeof curseFilter).toBe('function');
+  });
+
+  it('should return true for curse spells', () => {
+    const spellsTestCurse= { spell_type: 'Curse' };
+    expect(curseFilter(spellsTestCurse)).toBe(true);
+  });
+})
+
+describe("transportationFilter", () => {
+
+  it('is a function', () => {
+    expect(typeof transportationFilter).toBe('function');
+  });
+
+  it('should return true for transportation spells', () => {
+    const spellsTestTransp= { spell_type: 'Transportation' };
+    expect(transportationFilter(spellsTestTransp)).toBe(true);
+  });
+})
+
+describe("healingFilter", () => {
+
+  it('is a function', () => {
+    expect(typeof healingFilter).toBe('function');
+  });
+
+  it('should return true for healing spells', () => {
+    const spellsTestHealing= { spell_type: 'Healing Spell' };
+    expect(healingFilter(spellsTestHealing)).toBe(true);
+  });
+})
+
+//Función ordenar AZ
+describe("sortSpells", () => {
+
+  it('is a function', () => {
+    expect(typeof sortSpells).toBe('function');
+  });
+  it('should return order AZ of spells', () => {
+    const spellsOrderedAz = 
+      [
+        {name:"Camila"}, {name:"Beatriz"} ,{name:"Alejandra"}
+      ]
+    expect(sortSpells(spellsOrderedAz, "A-z")).toEqual( 
+      [
+        {name:"Alejandra"}, {name:"Beatriz"},{name:"Camila"},
+      ]
+    )})
+});
+
+
 
 
 

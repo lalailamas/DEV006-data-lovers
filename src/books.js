@@ -7,11 +7,21 @@ const booksInfo = document.getElementById('cardBook');
 const formattedBooks = formatBooks(data.books);
 formattedBooks.forEach((item) => {
   const divBook = document.createElement('div');
-  divBook.innerHTML =
-        ` ${createImage(item.image)}<br> 
-          <div id="mostaratras" style="display:none">${item.description} </div>
-          ${item.title} <br>
-          ${item.releaseDay}`;
+  divBook.innerHTML = `
+    <div class="flip-card-book">
+        <div class="flip-card-inner-book">
+            <div class="flip-card-front-book">
+                ${createImage(item.image)}
+                <p>${item.title}</p>
+                <p>${item.releaseDay}</p>
+            </div>
+            <div class="flip-card-back-book">
+                <h1>Description</h1> 
+                <p>${item.description} </p> 
+            </div>   
+        </div>
+    </div>
+  `
   booksInfo.appendChild(divBook);
 });
 
@@ -29,9 +39,21 @@ function renderBooks(books) {
   books.forEach((item) => {
     const divBook = document.createElement('div');
     divBook.innerHTML =
-          ` ${createImage(item.image)} <br>
-            ${item.title} <br>
-            ${item.releaseDay}`;
+    `
+    <div class="flip-card-book">
+        <div class="flip-card-inner-book">
+            <div class="flip-card-front-book">
+                ${createImage(item.image)}
+                <p>${item.title}</p>
+                <p>${item.releaseDay}</p>
+            </div>
+            <div class="flip-card-back-book">
+                <h1>Description</h1> 
+                <p>${item.description} </p> 
+            </div>   
+        </div>
+    </div>
+  `;
     booksInfo.appendChild(divBook);
   });
 }

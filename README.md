@@ -81,3 +81,5 @@ Se hicieron algunas iteraciones al momento de realizar el codigo para darle mejo
 * [ ] UI: Permite ordenar data por uno o más campos (asc y desc).
 * [ ] UI: Permite filtrar data en base a una condición.
 * [ ] UI: Es _responsive_.
+
+Enlace menú desplegado: https://ivonnefm03.github.io/DEV006-data-lovers/src/
